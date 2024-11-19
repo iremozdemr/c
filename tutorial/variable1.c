@@ -13,12 +13,17 @@
 //ctype.h – character functions
 
 //lines begin with # are processed by the preprocesser before the program is compiled
+
 //#include <file name>
 //predefined dosyalar icin kullanilir
 //#include "file name"
 //userdefined dosyalar icin kullanilir
 
 //c dili:
+//small
+//fast
+//power efficient
+//portable
 //procedural
 //statically typed
 //middle level
@@ -26,6 +31,10 @@
 //cross platform
 //block structured
 //imperative
+
+//macro:
+//kodda macro'nun ismi kullanıldığında 
+//preprocessor bu macro'nun ismiyle macro'nun içeriğini değiştirir
 
 //c programming flow:
 //1- preprocessor
