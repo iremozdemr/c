@@ -26,27 +26,38 @@
 //dosya yoksa oluşturur
 
 //fopen():
+//fopen("dosyaismi","r")
 //dosyayı açar
 
 //fclose():
+//flclose(file)
 //dosyayı kapatır
 
 //feof():
 //dosyanın sonuna gelinip gelinmediğini kontrol eder
 
+//fputc():
+//fputc(mychar,file)
+//dosyaya text karakter yazar
+
 //fprintf():
-//dosyaya text yazar
+//fprintf(file,"text")
+//dosyaya text satır yazar
 
 //fgetc():
+//fgetc(file)
 //dosyadan text karakter okur
 
 //fgets():
+//fgets(array,100,file)
 //dosyadan text satır okur
 
 //fwrite():
+//fwrite(array,sizeof(int),4,file)
 //dosyaya binary yazar
 
 //fread():
+//fread(array,sizeof(int),4,file)
 //dosyadan binary okur
 
 #include <stdio.h>

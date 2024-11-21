@@ -16,8 +16,8 @@ int main(){
 
     strcpy(employee1.name,"employee1");
     strcpy(employee2.name,"employee2");
-    // employee1.name = "employee1";
-    // employee2.name = "employee2";
+    //employee1.name = "employee1";
+    //employee2.name = "employee2";
 
     employee1.salary = 1000;
     employee2.salary = 2000;

@@ -1,11 +1,11 @@
-// structure
+//structure
 
-// array farklı türden variable içeremez
-// structure farklı türden variable içerebilir
+//array farklı türden variable içeremez
+//structure farklı türden variable içerebilir
 
-// structure içinde function bulunamaz
-// structure içinde constructor bulunamaz
-// structure içinde static variable bulunamaz
+//structure içinde function bulunamaz
+//structure içinde constructor bulunamaz
+//structure içinde static variable bulunamaz
 
 #include <stdio.h>
 
@@ -27,7 +27,7 @@ int main(){
     printf("%lu\n",sizeof(struct mystruct1));
     printf("%lu\n",sizeof(struct mystruct2));
 
-    // printf("%lu\n",sizeof(struct));
+    //printf("%lu\n",sizeof(struct));
     
     return 0;
 }

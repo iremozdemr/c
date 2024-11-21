@@ -8,10 +8,10 @@ struct employee{
 };
 
 int main(){
-    // struct employee employee1;
-    // struct employee employee2;
-    // employees[0] = employee1;
-    // employees[1] = employee2;
+    //struct employee employee1;
+    //struct employee employee2;
+    //employees[0] = employee1;
+    //employees[1] = employee2;
     
     struct employee employees[2];
 

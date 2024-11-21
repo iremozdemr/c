@@ -10,8 +10,8 @@ struct outer{
         int y;
     }outer_element3;
 };
-// outer_element3 inner'dan oluşmuştur
-// outer_element3 outer'ın elementidir
+//outer_element3 inner'dan oluşmuştur
+//outer_element3 outer'ın elementidir
 
 int main(){
     struct outer mystruct;

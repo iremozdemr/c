@@ -11,7 +11,9 @@ int main(){
         int b;
     }variable2;
 
-    struct mystruct2 variable3;
+    struct mystruct1 variable3;
+
+    struct mystruct2 variable4;
 
     variable1.a = 1;
     variable1.b = 2;
@@ -21,6 +23,9 @@ int main(){
 
     variable3.a = 1;
     variable3.b = 2;
+
+    variable4.a = 1;
+    variable4.b = 2;
 
     return 0;
 }
