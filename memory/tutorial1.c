@@ -13,6 +13,14 @@
 //size_t size   -> ayırmak istenilen bellek miktarı (byte cinsinden)
 //void *        -> başarılı olursa tahsis edilen bellek bloğunun başlangıç adresini döner
 
+//realloc:
+//tahsis edilen belleğin büyüklüğünü değiştirir
+//ilk parametre NULL yapılırsa malloc gibi davranır
+//ikinci parametre 0 yapılırsa free gibi davranır
+//void* realloc(void *ptr, size_t size);
+//void *ptr     -> daha önce ayrılmış belleği gösteren pointer
+//size_t size   -> ayırmak istenilen yeni bellek miktarı (byte cinsinden)
+
 //free:
 //void free(void * pointer);
 
