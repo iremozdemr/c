@@ -10,7 +10,19 @@ int main(){
 
     char mychar;
 
+    //yöntem 1:
     while((mychar = fgetc(file)) != EOF){
+        printf("%c", mychar);
+    }
+
+    //yöntem 2:
+    while(1){
+        mychar = fgetc(file);
+
+        if(feof(file)){
+            break;
+        }
+
         printf("%c", mychar);
     }
 

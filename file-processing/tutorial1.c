@@ -26,39 +26,61 @@
 //dosya yoksa oluşturur
 
 //fopen():
-//fopen("dosyaismi","r")
 //dosyayı açar
+//yeni dosya oluşturur
+
+//dosya açılabilirse file pointer döner
+//dosya açılamazsa NULL döner
 
 //fclose():
-//flclose(file)
 //dosyayı kapatır
 
 //feof():
 //dosyanın sonuna gelinip gelinmediğini kontrol eder
 
-//fputc():
-//fputc(mychar,file)
-//dosyaya text karakter yazar
+//okuma:
+//fgetc
+//fgets
+//fgetw
+//fread
+//fscanf
 
-//fprintf():
-//fprintf(file,"text")
-//dosyaya text satır yazar
+//yazma:
+//fputc
+//fputs
+//fputw
+//fwrite
+//fprintf
 
 //fgetc():
-//fgetc(file)
 //dosyadan text karakter okur
 
 //fgets():
-//fgets(array,100,file)
 //dosyadan text satır okur
 
-//fwrite():
-//fwrite(array,sizeof(int),4,file)
-//dosyaya binary yazar
+//fgetw():
+//dosyadan sayı okur
 
 //fread():
-//fread(array,sizeof(int),4,file)
 //dosyadan binary okur
+
+//fscanf():
+//dosyadan text string okur
+
+//fputc():
+//dosyaya text karakter yazar
+
+//fputs():
+//dosyaya text satır yazar
+
+//fputw():
+//dosyaya sayı yazar
+
+//fwrite():
+//dosyaya binary yazar
+
+//fprintf():
+//dosyaya text string yazar
 
 #include <stdio.h>
 
