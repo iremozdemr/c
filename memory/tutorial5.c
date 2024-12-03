@@ -17,7 +17,6 @@ int main() {
         }
     }
 
-    // Matrisi yazdır
     for (int i = 0; i < rows; i++) {
         for (int j = 0; j < cols; j++) {
             printf("%d", matrix[i][j]);
@@ -28,6 +27,7 @@ int main() {
     for (int i = 0; i < rows; i++) {
         free(matrix[i]);
     }
+
     free(matrix);
 
     return 0;

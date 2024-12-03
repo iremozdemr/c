@@ -27,6 +27,7 @@ int main() {
     for (int i = 0; i < rows; i++) {
         free(matrix[i]);
     }
+    
     free(matrix);
 
     return 0;
