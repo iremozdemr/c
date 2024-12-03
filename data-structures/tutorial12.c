@@ -46,6 +46,36 @@ void delete(node* root,int value){
     }
 }
 
+node* delete(node* root, int value) {
+    if (root == NULL) {
+        return root;
+    }
+
+    if (value < root->data) {
+        root->left = delete(root->left, value);
+    } 
+    else if (value > root->data) {
+        root->right = delete(root->right, value);
+    } 
+    else {
+        if (root->left == NULL) {
+            node* temp = root->right;
+            free(root);
+            return temp;
+        } 
+        else if (root->right == NULL) {
+            node* temp = root->left;
+            free(root);
+            return temp;
+        }
+
+        node* temp = findMin(root->right);
+        root->data = temp->data;
+        root->right = delete(root->right, temp->data);
+    }
+    return root;
+}
+
 node* search(node* root, int value){
     if(root == NULL){
         return root;
