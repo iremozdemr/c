@@ -25,10 +25,11 @@ int main() {
     pid_t ppid = getppid();
     //parent process'in pid'si
     pid_t pgid = getpgid(0);
+    //group process'in pid'si
 
     printf("current process pid: %d\n", pid);
     printf("parent process pid: %d\n", ppid);
-    printf("parent process pid: %d\n", pgid);
+    printf("group process pid: %d\n", pgid);
 
     return 0;
 }
