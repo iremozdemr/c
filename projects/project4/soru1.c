@@ -2,6 +2,8 @@
 #include <string.h>
 #include <unistd.h>
 #include <signal.h>
+#include <sys/wait.h>
+#include <stdlib.h>
 
 #define MAX_LEN 256
 
@@ -86,11 +88,6 @@ int main() {
         }
 
         close(fd[1]); 
-
-        // int status;
-        // if (wait(&status) == -1) {
-        //     perror("wait");
-        // }
     } 
     else {
         perror("fork");
