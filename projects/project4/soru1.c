@@ -1,18 +1,17 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#include <sys/types.h>
-#include <sys/wait.h>
 #include <signal.h>
 
 #define MAX_LEN 256
 
-void handle_sigint(int sig) {
-    printf("\n");
-    printf("SIGINT detected signal: %d ", sig);
-    printf("terminating\n");
-    fflush(stdout);
-    kill(0, SIGTERM); 
+void signalHandler(int sig) {
+    if(getpid() == getpgrp()){
+        printf("\n");
+        printf("SIGINT detected sig number: %d ", sig);
+        fflush(stdout);
+        kill(0, SIGTERM); 
+    }
 }
 
 void removeNewline(char *input) {
@@ -47,7 +46,11 @@ int main() {
 
         while (1) {
             ssize_t bytes = read(fd[0], input, MAX_LEN);
+            
             if (bytes <= 0) {
+                if(bytes == -1){
+                    perror("read function returned -1");
+                }
                 break; 
             }
 
@@ -58,10 +61,11 @@ int main() {
         }
 
         close(fd[0]); 
-    } else if (pid > 0) {
+    } 
+    else if (pid > 0) {
         close(fd[0]);
 
-        signal(SIGINT, handle_sigint);
+        signal(SIGINT, signalHandler);
 
         while (1) {
             printf("please enter a string of max length %d: ", MAX_LEN - 1);
@@ -75,11 +79,18 @@ int main() {
             }
 
             removeNewline(input);
-            write(fd[1], input, strlen(input) + 1); 
+            if (write(fd[1], input, strlen(input) + 1) == -1) {
+                perror("write function returned -1");
+                break;
+            }
         }
 
         close(fd[1]); 
-        wait(NULL);   
+
+        // int status;
+        // if (wait(&status) == -1) {
+        //     perror("wait");
+        // }
     } 
     else {
         perror("fork");

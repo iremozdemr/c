@@ -6,7 +6,7 @@
 
 int main(int argc, char *argv[]) {
     if (argc != 2) {
-        fprintf(stderr, "Usage: %s /directory/absolute/path\n", argv[0]);
+        perror("you entered invalid command line argument");
         return 1;
     }
 
@@ -31,7 +31,8 @@ int main(int argc, char *argv[]) {
 
         perror("execv ls");
         exit(1);
-    } else if (pid1 > 0) {
+    } 
+    else if (pid1 > 0) {
         pid_t pid2 = fork();
 
         if (pid2 == 0) {
@@ -56,8 +57,11 @@ int main(int argc, char *argv[]) {
             perror("fork");
             return 1;
         }
-    } else {
+    } 
+    else {
         perror("fork");
+        close(fd[0]);
+        close(fd[1]);
         return 1;
     }
 
