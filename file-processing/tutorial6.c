@@ -14,7 +14,19 @@ int main(){
     fseek(file, 0, SEEK_END);
     //moving pointer to end
 
-    printf("%ld", ftell(file));
+    printf("%ld \n", ftell(file));
+    //printing position of pointer
+
+    fseek(file, 0, SEEK_SET);
+    //moving pointer to end
+
+    printf("%ld \n", ftell(file));
+    //printing position of pointer
+
+    fseek(file, 0, SEEK_CUR);
+    //moving pointer to end
+
+    printf("%ld \n", ftell(file));
     //printing position of pointer
 
     fclose(file);

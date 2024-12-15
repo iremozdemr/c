@@ -8,22 +8,20 @@ int main(){
         return 1;
     }
 
-    char mychar;
-
-    //yöntem 1:
-    while((mychar = fgetc(file)) != EOF){
-        printf("%c", mychar);
+    char mychar1;
+    while((mychar1 = fgetc(file)) != EOF){
+        printf("%c", mychar1);
     }
 
-    //yöntem 2:
+    char mychar2;
     while(1){
-        mychar = fgetc(file);
+        mychar2 = fgetc(file);
 
         if(feof(file)){
             break;
         }
 
-        printf("%c", mychar);
+        printf("%c", mychar2);
     }
 
     fclose(file); 

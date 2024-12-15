@@ -8,7 +8,7 @@
 //dosya yoksa hata verir
 //"w":  
 //yazmak için dosyayı açar
-//dosya varsa dosyanın içeriğini siler
+//dosya yoksa oluşturur
 //"a":  
 //eklemek için dosyayı açar
 //dosya yoksa oluşturur
@@ -28,7 +28,6 @@
 //fopen():
 //dosyayı açar
 //yeni dosya oluşturur
-
 //dosya açılabilirse file pointer döner
 //dosya açılamazsa NULL döner
 
@@ -85,22 +84,39 @@
 #include <stdio.h>
 
 int main(){
-    FILE *file = fopen("filename.txt","w");
-    //dosyayı yazma modunda açma
+    FILE *file1 = fopen("filename.txt","w");
+    FILE *file2 = fopen("filename.bin","wb");
 
-    if(file == NULL){
+    if(file1 == NULL){
         printf("dosya acilamadi \n");
         return 1;
     }
-    //dosya açılamadıysa hata verir
+    if(file2 == NULL){
+        printf("dosya acilamadi \n");
+        return 1;
+    }
 
-    fprintf(file,"hello world! \n");
-    fprintf(file,"hiiii! \n");
-    fprintf(file,"hello! \n");
+    int age = 25;
+    int salary = 5000;
+    fprintf(file1,"hello! \n");
+    fprintf(file1,"age: %d\n",age);
+    fprintf(file1,"salary: %d\n",salary);
     //dosyaya yazar
 
-    fclose(file);
-    //dosyayı kapatır
+    char text[] = "dosya islemleri";
+    fputs(text,file1);
+    //dosyaya yazar
+
+    fputc('\n',file1);
+    fputc('w',file1);
+    //dosyaya yazar
+
+    int numbers[] = {10, 20, 30, 40, 50};
+    fwrite(numbers,sizeof(int),5,file2);
+    //dosyaya yazar
+
+    fclose(file1);
+    fclose(file2);
     
     return 0;
 }

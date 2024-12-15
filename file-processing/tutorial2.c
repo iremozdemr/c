@@ -1,18 +1,16 @@
 #include <stdio.h>
 
 int main(){
-    FILE *file = fopen("filename.txt", "w");  
+    FILE *file = fopen("filename.txt", "a");  
 
     if (file == NULL) {  
         printf("dosya acilamadi\n");
         return 1;
     }
 
-    char text[] = "dosya islemleri";
-
-    for(int i=0; text[i] != '\0'; i++){
-        fputc(text[i],file);
-    }
+    fprintf(file,"hello world! \n");
+    fprintf(file,"hiiii! \n");
+    fprintf(file,"hello! \n");
 
     fclose(file); 
 
